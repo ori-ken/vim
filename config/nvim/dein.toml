@@ -5,6 +5,15 @@ repo = 'Shougo/dein.vim'
 repo = 'cespare/vim-toml'
 
 [[plugins]]
+repo = 'altercation/vim-colors-solarized'
+hook_add = '''
+    " :call dein#recache_runtimepath()をしてcolorディレクトリを認識しさせる。
+    syntax enable
+    set background=dark
+    colorscheme solarized
+'''
+
+[[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = '''
     let g:lightline = {'colorscheme': 'solarized'}
@@ -13,6 +22,7 @@ hook_add = '''
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 hook_add = '''
+"    hi CursorLine ctermbg=DarkCyan
     nmap <silent> <Space>f :<C-u>Denite file/rec<CR>
 
     autocmd FileType denite call s:denite_my_settings()
